@@ -1,22 +1,21 @@
 package br.com.sousa.projeto.dto;
 
-import br.com.sousa.projeto.entity.UsuarioEntity;
-import com.fasterxml.jackson.databind.util.BeanUtil;
+import br.com.sousa.projeto.entity.UserEntity;
 import org.springframework.beans.BeanUtils;
 
-public class UsuarioDTO {
+public class UserDTO {
 
     private Long id;
-    private String nome;
+    private String name;
     private String login;
-    private String senha;
+    private String password;
     private String email;
 
-    public UsuarioDTO(UsuarioEntity usuario) {
-        BeanUtils.copyProperties(usuario, this);
+    public UserDTO(UserEntity user) {
+        BeanUtils.copyProperties(user, this);
     }
 
-    public UsuarioDTO() {
+    public UserDTO() {
     }
 
     public Long getId() {
@@ -27,12 +26,12 @@ public class UsuarioDTO {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLogin() {
@@ -43,12 +42,12 @@ public class UsuarioDTO {
         this.login = login;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {

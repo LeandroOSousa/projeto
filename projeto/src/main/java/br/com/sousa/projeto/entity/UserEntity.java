@@ -1,36 +1,36 @@
 package br.com.sousa.projeto.entity;
 
-import br.com.sousa.projeto.dto.UsuarioDTO;
+import br.com.sousa.projeto.dto.UserDTO;
 import jakarta.persistence.*;
 import org.springframework.beans.BeanUtils;
 
 import java.util.Objects;
 
 @Entity
-@Table(name = "LOS_USUARIO")
-public class UsuarioEntity {
+@Table(name = "LOS_USER")
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String nome;
+    private String name;
 
     @Column(nullable = false, unique = true)
     private String login;
 
     @Column(nullable = false)
-    private String senha;
+    private String password;
 
     @Column(nullable = false)
     private String email;
 
-    public UsuarioEntity(UsuarioDTO usuario) {
-        BeanUtils.copyProperties(usuario, this);
+    public UserEntity(UserDTO user) {
+        BeanUtils.copyProperties(user, this);
     }
 
-    public UsuarioEntity() {
+    public UserEntity() {
     }
 
     public Long getId() {
@@ -41,12 +41,12 @@ public class UsuarioEntity {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLogin() {
@@ -57,12 +57,12 @@ public class UsuarioEntity {
         this.login = login;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
@@ -77,7 +77,7 @@ public class UsuarioEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        UsuarioEntity that = (UsuarioEntity) o;
+        UserEntity that = (UserEntity) o;
         return Objects.equals(id, that.id);
     }
 
