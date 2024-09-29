@@ -16,7 +16,7 @@ public class RecursoController {
     private RecursoService recursoService;
 
     @GetMapping
-    public List<RecursoDTO> listarTodos(){
+    public List<RecursoDTO> listarTodos() {
         return recursoService.listarTodos();
     }
 
@@ -32,7 +32,7 @@ public class RecursoController {
 
     //http://endereco/recurso/{id}
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> excluir(@PathVariable("id") Long id){
+    public ResponseEntity<Void> excluir(@PathVariable("id") Long id) {
         recursoService.excluir(id);
         return ResponseEntity.ok().build();
     }
