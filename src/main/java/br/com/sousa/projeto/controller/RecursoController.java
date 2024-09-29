@@ -30,7 +30,7 @@ public class RecursoController {
         return recursoService.alterar(recurso);
     }
 
-    //http://endereco/recurso/3
+    //http://endereco/recurso/{id}
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> excluir(@PathVariable("id") Long id){
         recursoService.excluir(id);

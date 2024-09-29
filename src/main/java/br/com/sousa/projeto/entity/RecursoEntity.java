@@ -12,7 +12,7 @@ import java.util.Objects;
 public class RecursoEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
@@ -21,11 +21,11 @@ public class RecursoEntity {
     @Column(nullable = false)
     private String chave;
 
-    public  RecursoEntity(){
+    public RecursoEntity() {
     }
 
-    public RecursoEntity(RecursoDTO recurso){
-        BeanUtils.copyProperties(recurso, recurso);
+    public RecursoEntity(RecursoDTO recurso) {
+        BeanUtils.copyProperties(recurso, this);
     }
 
     public Long getId() {

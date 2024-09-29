@@ -16,84 +16,84 @@ import jakarta.persistence.Table;
 @Table(name = "LOS_USUARIO")
 public class UsuarioEntity {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(nullable = false)
-	private String nome;
-	
-	@Column(nullable = false, unique = true)
-	private String login;
-	
-	@Column(nullable = false)
-	private String senha;
-	
-	@Column(nullable = false)
-	private String email;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	public UsuarioEntity(UsuarioDTO usuario) {
-		BeanUtils.copyProperties(usuario, this);
-	}
-	
-	public UsuarioEntity() {
-		
-	}
-	
-	public Long getId() {
-		return id;
-	}
+    @Column(nullable = false)
+    private String nome;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(nullable = false, unique = true)
+    private String login;
 
-	public String getNome() {
-		return nome;
-	}
+    @Column(nullable = false)
+    private String senha;
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    @Column(nullable = false)
+    private String email;
 
-	public String getLogin() {
-		return login;
-	}
+    public UsuarioEntity(UsuarioDTO usuario) {
+        BeanUtils.copyProperties(usuario, this);
+    }
 
-	public void setLogin(String login) {
-		this.login = login;
-	}
+    public UsuarioEntity() {
 
-	public String getSenha() {
-		return senha;
-	}
+    }
 
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		UsuarioEntity other = (UsuarioEntity) obj;
-		return Objects.equals(id, other.id);
-	}	
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        UsuarioEntity other = (UsuarioEntity) obj;
+        return Objects.equals(id, other.id);
+    }
 }
