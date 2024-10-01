@@ -1,8 +1,6 @@
 package br.com.sousa.projeto.entity;
 
-import br.com.sousa.projeto.dto.PerfilDTO;
 import br.com.sousa.projeto.dto.PerfilUsuarioDTO;
-import br.com.sousa.projeto.dto.UsuarioDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

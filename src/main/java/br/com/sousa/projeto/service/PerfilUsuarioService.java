@@ -11,7 +11,6 @@ import java.util.List;
 @Service
 public class PerfilUsuarioService {
 
-
     @Autowired
     private PerfilUsuarioRepository perfilUsuarioRepository;
 
